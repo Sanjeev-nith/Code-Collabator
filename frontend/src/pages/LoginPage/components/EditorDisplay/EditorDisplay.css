@@ -1,0 +1,26 @@
+.editorDisplay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.codeMirrorEditor {
+    min-width: 150px;
+    width: 32%;
+    height: 300px;
+    overflow-y: scroll;
+    border: 3px solid #1d5834;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.codeMirrorEditor::-webkit-scrollbar {
+    display: none;
+}
+
+.coderText {
+    text-align: center;
+    margin: 0px;
+    font-size: larger;
+}

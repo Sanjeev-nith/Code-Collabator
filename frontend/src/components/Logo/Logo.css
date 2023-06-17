@@ -1,0 +1,17 @@
+.logoText {
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size: small;
+}
+
+.appName {
+    font-size:x-large;
+    font-weight: bold;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+}

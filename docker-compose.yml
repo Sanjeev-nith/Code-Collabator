@@ -1,0 +1,47 @@
+version: '3'
+services:
+  nginx:
+    depends_on:
+      - frontend
+      - backend_server
+      - websocket_server
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - '80:80'
+
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - POSTGRES_PASSWORD=codecollabdb
+      
+  backend_server:
+    depends_on:
+      - postgres
+    build:
+      dockerfile: Dockerfile
+      context: ./backend_server 
+    environment:
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=codecollabdb
+      - PGPORT=5432
+      - GOOGLE_CLIENT_ID
+      - GOOGLE_CLIENT_SECRET
+      - COOKIE_SECRET
+      - JDOODLE_API_CLIENT_ID
+      - JDOODLE_API_CLIENT_SECRET
+      - OAUTH_CALLBACK_URL
+
+  websocket_server:
+    build:
+      dockerfile: Dockerfile
+      context: ./websocket_server
+      
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend

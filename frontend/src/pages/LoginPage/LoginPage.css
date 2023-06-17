@@ -1,0 +1,14 @@
+.loginPageBody {
+    padding-top: 75px;
+    color: white;
+}
+
+.getStartedBtn {
+    font-size: x-large;
+    margin: auto;
+}
+
+.googleBtn {
+    text-decoration: none;
+    margin: 15px;
+}
